@@ -1,0 +1,147 @@
+.footerdiv1{
+    width: 100%;
+    margin: 0 auto !important;
+    background:#e6e6e6;
+  }
+  
+  .sendingconditionfooter{
+     padding:10px 0;
+  }
+  
+  .conditionforfooter{
+   
+  }
+  
+  .sendingconditionfooter img{
+    float:right;
+    width:45px;
+  }
+  
+  .sendingconditioninfo{
+    margin-left:45px ;
+  }
+  
+  p.toptitlecondistion{
+    margin-bottom: 2px;
+    font-weight:bold;
+    color:#000;
+    padding: 5px 0;
+    border-bottom: 1px solid #bbb;;
+  }
+  
+  .subtitlecondition{
+    font-size: 12px;
+  }
+  
+  .footerdiv2{
+    width: 100%;
+    margin: 0 auto !important;
+    background: #3f414d;
+    font-size:17px;
+    padding: 25px 0;
+  }
+  
+  .footerdiv2 a{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .footerdiv2 p{
+    color:#fff;
+  }
+  
+  /* .gettinguseremail{
+    color:#fff !important;
+  } */
+  
+  .gettinguseremail input{
+    color:#fff !important;
+  }
+  
+  .inputuseremail{
+    width: 80%;
+    float: right;
+    display: inline;
+    background: transparent !important;
+    border: 1px solid #fff;
+    font-size: 17px;
+    color: #fff;
+  }
+
+  /* .inputuseremail:placeholder {
+    font-size: 13px;
+} */
+  
+  .submituseremail{
+    background: transparent;
+    width: 18%;
+    margin-right: 2%;
+    border: 1px solid #fff;
+    border-radius:3px;
+    padding: 4px 0;
+    color: #fff;
+    font-size: 17px;
+  }
+  
+  .footerdiv3{
+    background:#6f6f6f;
+    padding: 20px 0;
+    color: #fff;
+  }
+  
+  ul.footer3list{
+    border-left: 1px solid #8e8e8e;
+    /* min-height: 170px; */
+    padding-right: 0;
+  }
+  
+  .footerdiv3 a{
+    color: #fff;
+    /* line-height: 2em; */
+    transition: background 0.3s ease-in-out;
+    padding: 3px 6px 3px 6px;
+    border-radius: 7px;
+  }
+
+  .footerdiv3 a:hover {
+    padding: 3px 6px 3px 6px;
+    color: #fff;
+    text-decoration: none;
+    background: #f5929a;
+    border-radius: 7px;
+}
+  
+  /* .footerdiv3 a:hover{
+    background:#f5929a;
+  } */
+  
+  a#tandis:hover{
+    background:unset;
+  }
+  
+  ul.footer3list.lastlist{
+    border-left: none;
+  }
+  
+  .footerdiv4{
+    text-align: justify;
+  }
+  
+  .titleoffooter4item{
+    color:#000;
+    font-size: 14px;
+  }
+  
+  .footerdiv4 p span a, .footerdiv4 p a {
+    color:#4a4a4a;
+  }
+  
+  .footerdiv5{
+    /* background:#f2859a; */
+    background:#ffddd2;
+    padding:7px 0 0px 0;
+    text-align: center;
+    font-size:13px;
+    color:#fff;
+  }

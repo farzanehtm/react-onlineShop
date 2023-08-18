@@ -1,0 +1,10 @@
+dark : #006d77
+
+blue: #83c5be
+
+light: #edf6f9
+
+light pink: #ffddd2
+
+pink: #e29578
+
