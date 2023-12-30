@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.js';
-// import 'bootstrap-v4.5-rtl/css/rtl/bootstrap.rtl.min.css';
+
 import './index.css';
 import './responsive.css';
 
@@ -13,5 +14,4 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
 

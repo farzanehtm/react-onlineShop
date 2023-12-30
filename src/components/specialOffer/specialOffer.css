@@ -1,0 +1,29 @@
+.special-offer{
+    width: 98% px;
+    margin: 0 auto !important;
+  }
+  
+  .header-title{
+      text-align: center;
+      color: #7e7e7e;
+      margin: 1em 0 0.5em;
+      font-size: 20px;
+    }
+  
+    .specialofferbox{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .specialofferbox img{
+      border-radius: 5px;
+      display: inline-block;
+      vertical-align: middle;
+      box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.13);
+    }
+    
+    .specialofferbox img:hover{
+      transform:translateY(-5px);
+      transition-duration: 0.3s;
+    }

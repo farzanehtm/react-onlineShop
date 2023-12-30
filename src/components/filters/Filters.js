@@ -1,19 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import './filters.css'
 import {FaPlus, FaMinus} from 'react-icons/fa'
 import Slider from "react-slider"
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/Context'
+import * as myModule  from '../../module/module';
 
-const MIN=100000;
-const MAX=2000000;
 
-function valuetext(value){
-    return `${value} تومان`
-}
+const MIN=50000;
+const MAX=500000;
+
+// function valuetext(value){
+//     return `${value} تومان`
+// }
 
 const Filters = ({handleFilterChange}) => {
 
-
+    const product  = useContext(CartContext);
     const [brandClicked, setBrandClick]= useState(true);
     const [priceClicked, setPriceClick]= useState(true);
     const [sliderValue,setSliderValue]= useState([MIN,MAX]);
@@ -26,24 +29,25 @@ const Filters = ({handleFilterChange}) => {
         setPriceClick(!priceClicked);         
     }
 
-    const handleSliderChange=(event , newValue)=>{
+    const handleSliderChange=(newValue)=>{
         setSliderValue(newValue);
+        console.log(newValue);
+        product.filterByPrice(newValue);
     }
 
 
 
 
   return (
-    <div className="filtercol">
+    <section className="me-3">
         <div className="filterContainerItem cart active">
             <ul className="sortingitem">
                 <li className="sortingli">
                     <label htmlFor="lang" className="ps-3">به ترتیب: </label>
-                    <select className="form-select-sm" name="languages" id="lang" onChange={handleFilterChange}>
+                    <select className="form-select-sm" name="languages" id="lang" onChange={product.handleFilterChange}>
                         <option value="newest">جدیدترین</option>
                         <option value="expensive">گران ترین</option>
                         <option value="cheapest">ارزان ترین</option>
-                        <option value="Bestselling">پرفروش ترین</option>
                     </select>
                 </li>
             </ul>
@@ -71,72 +75,68 @@ const Filters = ({handleFilterChange}) => {
                         <ul>
                             <li>
                                 <div className="d-flex justify-content-between">
-                                    <Link to="/" className="mb-1 pointer">دسته بندی بر اساس کتگوری</Link>
+                                    <Link to="/" className="mb-1 pointer">دسته بندی بر اساس دسته بندی</Link>
                                     { brandClicked ? <FaPlus color="#f2859a" onClick={handleBrandClick} /> :<FaMinus color="#f2859a" onClick={handleBrandClick} />}
                                 </div>
-                                <ul style={{display:brandClicked ? 'none' :'block'}} className="kindofpro bdyno11_body_right">
+                                <ul style={{display:brandClicked ? 'none' :'block'}} className="">
                                     <li>
-                                        <label className="container1" data-id="searchbrand">         
-                                        آرایشی                                          
-                                            <input className="searchinput" type="checkbox" name="brand_   " value="brand_261" id="brand_261"/>
-                                            <span className="checkmark"></span>
-                                        </label>
+                                        <Link to="/products/" onClick={()=>product.filterByCategory("آرایشی")}>
+                                            <label className="container1" data-id="searchbrand">         
+                                                آرایشی                                         
+                                                <input className="searchinput" type="checkbox" name="brand" value="brand_261" id="brand_261"/>
+                                                <span className="checkmark"></span>
+                                            </label>
+                                        </Link> 
                                     </li>
 
                                     <li>
-                                        <label className="container1" data-id="searchbrand">         
-                                        مراقبت پوست                                            
-                                            <input className="searchinput" type="checkbox" name="brand_   " value="brand_261" id="brand_261"/>
-                                            <span className="checkmark"></span>
-                                        </label>
+                                        <Link to="/products/" onClick={()=>product.filterByCategory("مراقبت پوست")}>
+                                            <label className="container1" data-id="searchbrand">         
+                                                مراقبت پوست                                           
+                                                <input className="searchinput" type="checkbox" name="brand" value="brand_261" id="brand_261"/>
+                                                <span className="checkmark"></span>
+                                            </label>
+                                        </Link> 
                                     </li>
 
                                     <li>
-                                        <label className="container1" data-id="searchbrand">         
-                                        مراقبت مو                                           
-                                            <input className="searchinput" type="checkbox" name="brand_   " value="brand_261" id="brand_261"/>
-                                            <span className="checkmark"></span>
-                                        </label>
+                                        <Link to="/products/" onClick={()=>product.filterByCategory("مراقبت مو")}>
+                                            <label className="container1" data-id="searchbrand">         
+                                                مراقبت مو                                          
+                                                <input className="searchinput" type="checkbox" name="brand" value="brand_261" id="brand_261"/>
+                                                <span className="checkmark"></span>
+                                            </label>
+                                        </Link> 
                                     </li>
 
                                     <li>
-                                        <label className="container1" data-id="searchbrand">         
-                                        بهداشت شخصی                                           
-                                            <input className="searchinput" type="checkbox" name="brand_   " value="brand_261" id="brand_261"/>
-                                            <span className="checkmark"></span>
-                                        </label>
+                                        <Link to="/products/" onClick={()=>product.filterByCategory("بهداشت شخصی")}>
+                                            <label className="container1" data-id="searchbrand">         
+                                                بهداشت شخصی                                          
+                                                <input className="searchinput" type="checkbox" name="brand" value="brand_261" id="brand_261"/>
+                                                <span className="checkmark"></span>
+                                            </label>
+                                        </Link> 
                                     </li>
 
                                     <li>
-                                        <label className="container1" data-id="searchbrand">         
-                                        عطر و ادکلن                                           
-                                            <input className="searchinput" type="checkbox" name="brand_   " value="brand_261" id="brand_261"/>
-                                            <span className="checkmark"></span>
-                                        </label>
+                                        <Link to="/products/" onClick={()=>product.filterByCategory("عطر و ادکلن")}>
+                                            <label className="container1" data-id="searchbrand">         
+                                                عطر و ادکلن                                           
+                                                <input className="searchinput" type="checkbox" name="brand" value="brand_261" id="brand_261"/>
+                                                <span className="checkmark"></span>
+                                            </label>
+                                        </Link>
                                     </li>
 
                                     <li>
-                                        <label className="container1" data-id="searchbrand">         
-                                        مد و اکسسوری                                           
-                                            <input className="searchinput" type="checkbox" name="brand_   " value="brand_261" id="brand_261"/>
-                                            <span className="checkmark"></span>
-                                        </label>
-                                    </li>
-
-                                    <li>
-                                        <label className="container1" data-id="searchbrand">         
-                                        لوازم برقی شخصی                                          
-                                            <input className="searchinput" type="checkbox" name="brand_   " value="brand_261" id="brand_261"/>
-                                            <span className="checkmark"></span>
-                                        </label>
-                                    </li>
-
-                                    <li>
-                                        <label className="container1" data-id="searchbrand">         
-                                        مادر و کودک                                            
-                                            <input className="searchinput" type="checkbox" name="brand_" value="brand_261" id="brand_261"/>
-                                            <span className="checkmark"></span>
-                                        </label>
+                                        <Link to="/products/" onClick={()=>product.filterByCategory("مادر و کودک")}>
+                                            <label className="container1" data-id="searchbrand">         
+                                                مادر و کودک                                            
+                                                <input className="searchinput" type="checkbox" name="brand" value="brand_261" id="brand_261"/>
+                                                <span className="checkmark"></span>
+                                            </label>
+                                        </Link>
                                     </li>
 
                                 </ul>
@@ -149,32 +149,19 @@ const Filters = ({handleFilterChange}) => {
                                 </div>
                                 
                                 <ul style={{display:priceClicked ? 'none' :'block'}}>
-                                    
-                                    {/* <ReactSlider
-                                    className="slider"
-                                    thumbClassName="thumb"
-                                    trackClassName="slider-track"
-                                    handleClassName="slider-handle" 
-                                    defaultValue={sliderValue}
-                                    ariaLabel={['Lower thumb', 'Uper thumb']}
-                                    pearling
-                                    min={0}
-                                    max={1000000}
-                                    onChange={handleSliderChange}
-                                    allowCrossover={false}
-                                    /> */}
 
                                     <div>
-                                        <span className={"range-value"}>{sliderValue[1]} تومان - {sliderValue[0]} تومان</span>
+                                        <span className={"range-value"}>{myModule.formatCurrency(sliderValue[1])} تومان - {myModule.formatCurrency(sliderValue[0])} تومان</span>
                                     </div>
                                     <Slider className={"slider-value"}
                                         trackClassName={"pink-track"}
-                                        onChange={setSliderValue} 
+                                        onChange={handleSliderChange} 
                                         value={sliderValue} 
                                         min={MIN} 
                                         max={MAX}
+                                        step={1000}
                                         pearling
-                                        minDistance={10000}/>
+                                        minDistance={1000}/>
                                 </ul>
                             </li>
                             
@@ -183,7 +170,7 @@ const Filters = ({handleFilterChange}) => {
                 </ul>
             </div>
         </div>
-    </div>
+    </section>
   )
 }
 

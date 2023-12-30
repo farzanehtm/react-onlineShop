@@ -1,32 +1,32 @@
 .sending-condition{
-  margin: 0 auto;
-  width: 98.5%;
-}
-.sending-condition-maindiv{
-    background: #fff;
-    margin-top: 10px;
-    padding: 6px 0;
-    overflow: hidden;
+    margin: 0 auto;
+    width: 98.5%;
   }
-  
-  .sending-condition-maindiv img{
-    float: right;
-    border: 0;
-    vertical-align: middle;
-    width:40px;
-    margin-top: 5px;
-  }
-  
-  .sending-condition-info{
-    margin-right: 45px;
-    font-size:10px;
-  }
-  
-  p.toptitle-condision{
-    margin-bottom: 2px;
-    font-weight: bold;
-    color: #000;
-    padding-top: 5px;
-    border-bottom: 1px solid #bbb;
-    padding-bottom: 5px;
-  }
+  .sending-condition-maindiv{
+      background: #fff;
+      margin-top: 10px;
+      padding: 6px 0;
+      overflow: hidden;
+    }
+    
+    .sending-condition-maindiv img{
+      float: right;
+      border: 0;
+      vertical-align: middle;
+      width:40px;
+      margin-top: 5px;
+    }
+    
+    .sending-condition-info{
+      margin-right: 45px;
+      font-size:10px;
+    }
+    
+    p.toptitle-condision{
+      margin-bottom: 2px;
+      font-weight: bold;
+      color: #000;
+      padding-top: 5px;
+      border-bottom: 1px solid #bbb;
+      padding-bottom: 5px;
+    }

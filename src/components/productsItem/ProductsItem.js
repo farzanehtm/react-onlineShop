@@ -1,17 +1,23 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import "./productsItem.css"
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/Context'
+import * as myModule  from '../../module/module';
 
-const ProductsItem = ({items}) => {
-//  console.log(items)
+
+
+const ProductsItem = () => {
+
+const products  = useContext(CartContext);
+
 
   return (
-    <div className="productcol">
+    <section className="">
       <div className="d-flex flex-wrap justify-content-around pt-3">
 
         {
-            items.map((product) =>{
-                const {id,image,brand,title,price}= product;
+            products.filterProducts.map((product) =>{
+                const {id,image,brand,title,price,Discount}= product;
                 return(
                 <div key={id} className="custom-card">
                     <Link to={`/products/${id}`}  className="">
@@ -19,7 +25,7 @@ const ProductsItem = ({items}) => {
 
                             <div className="image-colors-container">
                                 <div className="product-image-container">
-                                    <img className="product-image lazyloaded" src={image[0]}/>
+                                    <img alt="productImage" className="product-image lazyloaded" src={image[0]}/>
                                 </div>
                             </div>
 
@@ -27,10 +33,10 @@ const ProductsItem = ({items}) => {
                                 <h5 className="content-title">{brand}</h5>
                                 <p className="description">{title}</p>
                                 <div className="price-section pt-1">
-                                    <span className="price ps-1">169,850</span>
-                                    <span className="badge badge-danger" style={{backgroundColor: "red"}}>30%</span>
+                                    <span className="price ps-1 text-decoration-line-through">{myModule.formatCurrency(price)}</span>
+                                    <span className="badge badge-danger" style={{backgroundColor: "red"}}>{`${Discount}%`}</span>
                                     <p>
-                                        <span className="effective-price">{price}</span>
+                                        <span className="effective-price">{myModule.calculateDiscount(price,Discount)}</span>
                                         <span className="unit pe-1">تومان</span>
                                     </p>
                                 </div>
@@ -47,7 +53,7 @@ const ProductsItem = ({items}) => {
         }
 
       </div>
-    </div>
+    </section>
   )
 }
 

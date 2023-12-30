@@ -117,7 +117,7 @@
   .OffInPrices{
     direction: rtl;
     text-align: right;
-    color: #ff0a0a !important;
+    /* color: #ff0a0a !important; */
     font-weight: bold;
     font-size: 23px !important;
   }
